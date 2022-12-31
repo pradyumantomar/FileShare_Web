@@ -4,7 +4,7 @@ const path = require('path');
 const File = require('../models/schema');
 const { v4: uuidv4 } = require('uuid');
 
-let storage = multer.diskStorage({
+ let storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null,'uploads/'),
     filename: (req,file,cb) =>{
       const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1E9)}${path.extname(file.originalname)}`;
@@ -16,6 +16,15 @@ let upload = multer({
     storage,
     limits: {fileSize: 1000000 * 100}, //100MB
 }).single('myfile');
+
+
+
+router.get('/' ,(req,res)=>{
+  const  pathDir = path.resolve('./');
+  res.sendFile(pathDir + '/public/index.html');
+  // const paths = path.basename(fileHtml);
+  console.log(pathDir);
+})
 
 router.post('/' , (req , res)=>{
     upload(req,res,async (err) =>{
