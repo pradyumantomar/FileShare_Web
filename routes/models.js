@@ -23,7 +23,7 @@ router.get('/' ,(req,res)=>{
   const  pathDir = path.resolve('./');
   res.sendFile(pathDir + '/public/index.html');
   // const paths = path.basename(fileHtml);
-  console.log(pathDir);
+  // console.log(pathDir);
 })
 
 router.post('/' , (req , res)=>{
