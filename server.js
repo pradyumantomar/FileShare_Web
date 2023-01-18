@@ -27,6 +27,13 @@ connectDB();
 // get our app to use body parser 
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.use(bodyParser.json());
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse the raw data
+app.use(bodyParser.raw());
+// parse text
+app.use(bodyParser.text());
 
 // template engine
 app.set('views', path.join(__dirname, '/views'));
