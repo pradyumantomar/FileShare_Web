@@ -7,15 +7,16 @@ const dotenv = require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
 //cors
-const corsOptions = {
-    origin : process.env.ALLOWED_CLIENTS.split(',')
-}
+// const corsOptions = {
+//     origin : process.env.ALLOWED_CLIENTS.split(',')
+// }
 
-app.use(cors({
-    origin: '*'
-}));
+// app.use(cors({
+//     origin: '*'
+// }));
 // app.use(cors(corsOptions));
 
+app.use(cors());
 
 app.use(express.static('public'));   
 app.use(express.json());
