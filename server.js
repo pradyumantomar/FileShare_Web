@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const path = require('path');
-const cors = require('cors');
-const dotenv = require('dotenv').config();
-
+const path = require("path");
+const cors = require("cors");
+const dotenv = require("dotenv").config();
+const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3000;
 
 //cors
@@ -18,14 +18,13 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
-app.use(express.static('public'));   
+app.use(express.static("public"));
 app.use(express.json());
-const connectDB = require('./config/db');
+const connectDB = require("./config/db");
 connectDB();
 
-
-// get our app to use body parser 
-app.use(bodyParser.urlencoded({ extended: true }))
+// get our app to use body parser
+// app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(bodyParser.json());
 // parse application/x-www-form-urlencoded
@@ -36,14 +35,17 @@ app.use(bodyParser.raw());
 app.use(bodyParser.text());
 
 // template engine
-app.set('views', path.join(__dirname, '/views'));
-app.set('view engine', 'ejs');
+app.set("views", path.join(__dirname, "/views"));
+app.set("view engine", "ejs");
 
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
+});
 //routes
-app.use('/api/files',require('./routes/models'));
-app.use('/files',require('./routes/show'));
-app.use('/files/download', require('./routes/download'));
+app.use("/api/files", require("./routes/models"));
+app.use("/files", require("./routes/show"));
+app.use("/files/download", require("./routes/download"));
 
 app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`);
-})
+  console.log(`Listening on port ${PORT}`);
+});

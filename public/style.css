@@ -1,6 +1,6 @@
 :root {
-  --main-bg-color: #edf5fe;
-  --light-blue: #03a9f4;
+  --main-bg-color: #eaeef4;
+  --light-blue: #d403f4;
   --border-color: #0288d147;
   --container-width: 500px;
 }
@@ -56,7 +56,7 @@ body,
 /* will be added when user drags */
 .drop-zone.dragged {
   background: var(--main-bg-color);
-  border-color: #0288d1;
+  border-color: #a402d1;
 }
 
 .drop-zone input {
@@ -100,7 +100,7 @@ body,
 }
 
 #browseBtn {
-  color: #2196f3;
+  color: #21f3e9;
   cursor: pointer;
 }
 
