@@ -15,7 +15,7 @@ const emailForm = document.querySelector("#emailForm");
 
 const toast = document.querySelector(".toast");
 
-const baseURL = process.env.APP_BASE_URL;
+const baseURL = "https://shareme-6qdo.onrender.com/";
 console.log(baseURL);
 const uploadURL = `${baseURL}/api/files`;
 const emailURL = `${baseURL}/api/files/send`;
