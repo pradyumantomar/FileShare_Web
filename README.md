@@ -7,7 +7,8 @@ An online file-sharing platform that integrates with GitHub, allowing users to e
 
 [WebSiteURL]: https://shareme-6qdo.onrender.com "WebSiteURL"
 
-[![image](https://www.linkpicture.com/q/CodeFusion-v2.png)](https://www.linkpicture.com/view.php?img=LPic646baf2a4f59f2126884860)
+![ShareMe v1](https://github.com/pradyumantomar/ShareMe/assets/76039454/9e1dbf46-381a-43a3-bf01-9ff482a2bd9d)
+
 
 ## Requirements
 
